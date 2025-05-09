@@ -1,6 +1,7 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext import commands
 import discord
+import os
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
@@ -47,4 +48,5 @@ async def send_alert(message):
     if channel and channel.guild.id == 1358037717023326269:  # 서버 ID
         await channel.send(message)
 
-bot.run("MTM3MDM5MzM2NzI4Mzc2MTQwNA.G1FkEm.lLr-UurPhZ7Mp8MT4RaszEsrwWPXqxjyY5ikXk")
+access_token = os.environ["BOT_TOKEN"]
+bot.run("access_token")
